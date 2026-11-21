@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff5fa">
+<meta name="description" content="Girls - Un pequeño lugar lleno de amor, cariño y palabras bonitas para ti.">
+<title>Girls 🩷 | Un lugar para ti</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #ed9abb;
+  --pink-dark: #d978a2;
+  --pink-light: #fff0f6;
+  --pink-soft: #fff7fa;
+  --text: #805d70;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fffafd;
+  color: var(--text);
+  font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+}
+
+/* DECORACIÓN */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .25;
+  background-image: radial-gradient(#efb5ce 0.8px, transparent 0.8px);
+  background-size: 23px 23px;
+  z-index: -1;
+}
+
+.decor {
+  position: absolute;
+  pointer-events: none;
+  color: #efb2cc;
+  opacity: .7;
+}
+
+.decor.one {
+  top: 100px;
+  left: 5%;
+  font-size: 30px;
+}
+
+.decor.two {
+  top: 220px;
+  right: 7%;
+  font-size: 27px;
+}
+
+.decor.three {
+  top: 700px;
+  left: 7%;
+  font-size: 25px;
+}
+
+.decor.four {
+  top: 1150px;
+  right: 6%;
+  font-size: 30px;
+}
+
+/* CONTENEDOR */
+
+.container {
+  width: min(100% - 36px, 1050px);
+  margin: auto;
+}
+
+/* ENCABEZADO */
+
+header {
+  padding: 25px 0;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: var(--pink-dark);
+  font-size: 35px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.logo span {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 17px;
+}
+
+.subtitle {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #c58da8;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 65px 15px 75px;
+  position: relative;
+}
+
+.hero-label {
+  display: inline-block;
+  background: #fff0f6;
+  border: 1px solid #f8d8e5;
+  padding: 9px 19px;
+  border-radius: 30px;
+  color: #cb80a1;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(43px, 8vw, 76px);
+  line-height: 1.13;
+  color: #d77fa4;
+  font-weight: 600;
+}
+
+.hero h1 em {
+  color: #eca6c2;
+  font-weight: 500;
+}
+
+.hero p {
+  max-width: 570px;
+  margin: 22px auto 0;
+  line-height: 2;
+  font-size: 15px;
+  color: #98758a;
+}
+
+.hero-decoration {
+  margin-top: 30px;
+  font-size: 30px;
+  letter-spacing: 9px;
+}
+
+/* IMAGEN */
+
+.image-frame {
+  max-width: 680px;
+  margin: 0 auto 75px;
+  padding: 12px;
+  border: 1px solid #f3d4e1;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 15px 45px #e8bad02b;
+}
+
+.image-frame img {
+  display: block;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 17px;
+}
+
+/* SECCIONES */
+
+section {
+  margin-bottom: 75px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading small {
+  color: #d88aaa;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d77fa4;
+  font-size: clamp(29px, 5vw, 42px);
+  margin-top: 9px;
+  font-weight: 500;
+}
+
+.section-heading p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #a98a9b;
+}
+
+/* TARJETAS */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 17px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #f5dce7;
+  border-radius: 20px;
+  padding: 27px;
+  box-shadow: 0 8px 25px #e7b9cf12;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px #e7b9cf30;
+}
+
+.card-icon {
+  font-size: 27px;
+  margin-bottom: 13px;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  color: #d17d9f;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #987b8c;
+}
+
+/* FRASE CENTRAL */
+
+.quote {
+  text-align: center;
+  background: linear-gradient(135deg, #fff0f6, #fff8fb);
+  border: 1px solid #f5d5e3;
+  border-radius: 25px;
+  padding: 50px 25px;
+  margin: 80px 0;
+}
+
+.quote .symbol {
+  font-family: 'Playfair Display', serif;
+  color: #e7a2bd;
+  font-size: 55px;
+  line-height: .8;
+}
+
+.quote h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(25px, 5vw, 39px);
+  color: #d77fa4;
+  line-height: 1.5;
+  margin: 20px auto;
+  max-width: 700px;
+  font-weight: 500;
+}
+
+.quote p {
+  font-size: 12px;
+  color: #b88da3;
+}
+
+/* CARTA */
+
+.letter {
+  background: #fff;
+  border: 1px solid #f2d5e2;
+  border-radius: 23px;
+  padding: clamp(25px, 6vw, 50px);
+  position: relative;
+  box-shadow: 0 12px 35px #e6b6cd19;
+}
+
+.letter::before {
+  content: "🎀";
+  position: absolute;
+  top: -23px;
+  right: 25px;
+  font-size: 35px;
+}
+
+.letter h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  color: #d47d9f;
+  margin-bottom: 20px;
+}
+
+.letter p {
+  font-size: 14px;
+  line-height: 2.1;
+  color: #957587;
+  margin-bottom: 15px;
+}
+
+.signature {
+  text-align: right;
+  font-family: 'Playfair Display', serif;
+  color: #d77fa4;
+  font-style: italic;
+  font-size: 19px;
+  margin-top: 25px;
+}
+
+/* RECORDATORIOS */
+
+.reminders {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.reminder {
+  background: #fff;
+  border: 1px solid #f4dce6;
+  border-radius: 15px;
+  padding: 19px 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #99788b;
+}
+
+.reminder span {
+  font-size: 23px;
+}
+
+/* FLORES */
+
+.flower-box {
+  background: linear-gradient(135deg, #fff2f7, #fff9fc);
+  border-radius: 25px;
+  padding: 40px 25px;
+  text-align: center;
+  border: 1px solid #f6dce7;
+}
+
+.flower-box h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d77fa4;
+  font-size: 31px;
+  margin-bottom: 17px;
+}
+
+.flower-box p {
+  max-width: 650px;
+  margin: auto;
+  line-height: 2;
+  font-size: 14px;
+  color: #98778b;
+}
+
+/* MENSAJES */
+
+.messages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+}
+
+.message {
+  text-align: center;
+  background: white;
+  border: 1px solid #f3dce6;
+  padding: 23px 15px;
+  border-radius: 18px;
+}
+
+.message .emoji {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.message p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #ce81a2;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* FINAL */
+
+.final {
+  text-align: center;
+  padding: 75px 15px 65px;
+}
+
+.final .big-heart {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.final h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d77fa4;
+  font-size: clamp(32px, 6vw, 49px);
+  font-weight: 500;
+}
+
+.final p {
+  max-width: 550px;
+  margin: 20px auto;
+  line-height: 2;
+  font-size: 14px;
+  color: #98778b;
+}
+
+.final .ending {
+  color: #d58aaa;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 19px;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid #f5dce7;
+  padding: 27px 15px;
+  text-align: center;
+  color: #c28ba5;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+footer p + p {
+  margin-top: 8px;
+}
+
+/* CORAZONES FLOTANTES */
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 10;
+  animation: floatUp 8s linear forwards;
+  opacity: .65;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: .65;
+  }
+  85% {
+    opacity: .5;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 650px) {
+  .container {
+    width: min(100% - 27px, 1050px);
+  }
+
+  .hero {
+    padding: 48px 5px 55px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .image-frame img {
+    height: 220px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .messages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    padding: 23px;
+  }
+
+  section {
+    margin-bottom: 60px;
+  }
+
+  .quote {
+    margin: 60px 0;
+    padding: 40px 20px;
+  }
+
+  .reminder {
+    font-size: 12px;
+    padding: 16px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="decor one">♡</div>
+<div class="decor two">୨୧</div>
+<div class="decor three">✿</div>
+<div class="decor four">♡</div>
+
+<div class="container">
+
+<header>
+  <div class="logo">Girls<span>🩷</span></div>
+  <div class="subtitle">A little place full of love</div>
+</header>
+
+<main>
+
+<!-- INICIO -->
+
+<div class="hero">
+  <div class="hero-label">୨୧ UN PEQUEÑO RINCÓN PARA TI ୨୧</div>
+
+  <h1>
+    Bienvenida,<br>
+    <em>niña bonita.</em> 🎀
+  </h1>
+
+  <p>
+    Qué bonito que estés aquí. Este pequeño espacio fue creado
+    para recordarte algo que nunca deberías olvidar:
+    eres una persona maravillosa, mereces amor y tu existencia
+    hace que este mundo sea un poquito más bonito. 🩷
+  </p>
+
+  <div class="hero-decoration">
+    ♡ 🌷 ♡ 🎀 ♡
+  </div>
+</div>
+
+<div class="image-frame">
+  <img
+    src="https://placehold.co/900x420/fff0f6/d77fa4?text=Girls+%E2%99%A1"
+    alt="Decoración rosa de Girls"
+  >
+</div>
+
+<!-- ERES ESPECIAL -->
+
+<section>
+  <div class="section-heading">
+    <small>♡ PARA RECORDAR ♡</small>
+    <h2>Eres alguien especial</h2>
+    <p>Hay cosas que todas merecemos escuchar. 🌸</p>
+  </div>
+
+  <div class="card-grid">
+
+    <article class="card">
+      <div class="card-icon">🩷</div>
+      <h3>Eres suficiente</h3>
+      <p>
+        No necesitas ser más bonita, más inteligente o más perfecta
+        para merecer cariño. No tienes que demostrarle nada al mundo.
+        Tu valor no depende de la opinión de otras personas.
+        Tal como eres, mereces cosas maravillosas.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🦢</div>
+      <h3>Tienes tu propia luz</h3>
+      <p>
+        Nunca te compares con otras chicas. Cada una tiene su historia,
+        sus cualidades y su manera de brillar. Que alguien más sea
+        hermosa no significa que tú lo seas menos.
+        Hay espacio para que todas brillen.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🌷</div>
+      <h3>Mereces respeto</h3>
+      <p>
+        Tus sentimientos importan, tu voz importa y tus límites
+        merecen ser respetados. Nadie tiene derecho a hacerte sentir
+        pequeña, inferior o menos importante.
+        Nunca olvides lo que mereces.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🧸</div>
+      <h3>Puedes ser tú misma</h3>
+      <p>
+        No tienes que fingir ser alguien diferente para encajar.
+        Puedes ser sensible, divertida, tímida, soñadora o un poquito
+        de todo. Las personas que te quieren de verdad respetarán
+        tu forma de ser.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- FRASE -->
+
+<div class="quote">
+  <div class="symbol">“</div>
+  <h2>
+    No eres una copia de nadie.
+    Eres una historia única que merece ser querida.
+  </h2>
+  <p>♡ CON MUCHO CARIÑO, GIRLS 🩷 ♡</p>
+</div>
+
+<!-- DÍAS DIFÍCILES -->
+
+<section>
+  <div class="section-heading">
+    <small>🌧️ PARA LOS DÍAS DIFÍCILES</small>
+    <h2>Si hoy no fue tu día...</h2>
+    <p>Respira, preciosa. Lee esto con calma. 🩷</p>
+  </div>
+
+  <div class="card-grid">
+
+    <article class="card">
+      <div class="card-icon">☁️</div>
+      <h3>No tienes que poder con todo</h3>
+      <p>
+        Está bien tener días en los que no sabes qué hacer.
+        No tienes que estar feliz todo el tiempo ni fingir que
+        todo está bien. Puedes descansar, hablar con alguien
+        de confianza y darte el tiempo que necesitas.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🫧</div>
+      <h3>Un mal día no te define</h3>
+      <p>
+        Que hoy las cosas no hayan salido como esperabas
+        no significa que todo vaya a ser así.
+        Eres mucho más que un momento complicado.
+        Mañana también puede traer cosas bonitas.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🩷</div>
+      <h3>No estás sola</h3>
+      <p>
+        Siempre puedes buscar a alguien que te escuche,
+        una amistad sincera o una persona adulta en quien confíes.
+        No tienes que guardar todo lo que sientes para ti.
+        Mereces ser escuchada.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🌈</div>
+      <h3>Vendrán momentos bonitos</h3>
+      <p>
+        Todavía tienes muchísimas cosas por descubrir,
+        personas por conocer, sueños por cumplir y recuerdos
+        por crear. Tu historia sigue escribiéndose.
+        No pierdas la esperanza.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- CARTA -->
+
+<section>
+  <div class="section-heading">
+    <small>💌 UNA CARTITA PARA TI</small>
+    <h2>Querida niña bonita...</h2>
+    <p>Unas palabras que ojalá pudieras leer todos los días.</p>
+  </div>
+
+  <div class="letter">
+
+    <h3>Para ti, con mucho cariño ♡</h3>
+
+    <p>
+      Hola, preciosa. Quizás llegaste aquí por curiosidad,
+      porque alguien te compartió esta página o simplemente
+      porque necesitabas encontrar un pequeño rincón diferente.
+    </p>
+
+    <p>
+      Quiero recordarte que eres mucho más de lo que a veces
+      piensas. Eres una persona con sentimientos, sueños,
+      pensamientos, cualidades y una historia que merece
+      ser valorada.
+    </p>
+
+    <p>
+      No permitas que las comparaciones te hagan olvidar
+      lo maravillosa que eres. No tienes que parecerte a nadie.
+      No tienes que cumplir expectativas ajenas para sentirte
+      importante.
+    </p>
+
+    <p>
+      Mereces amistades que te hagan reír hasta que te duela
+      la barriga, personas que te escuchen cuando necesites hablar,
+      abrazos sinceros y momentos en los que puedas sentirte
+      tranquila siendo tú misma.
+    </p>
+
+    <p>
+      Si alguna vez dudas de ti, recuerda que tu valor no desaparece
+      cuando cometes errores, cuando estás triste o cuando no te
+      sientes en tu mejor momento.
+    </p>
+
+    <p>
+      Eres importante. Tus sueños importan. Tu felicidad importa.
+      Y mereces recibir el mismo cariño que tantas veces entregas
+      a los demás.
+    </p>
+
+    <p>
+      Ojalá nunca olvides que mereces un amor bonito, amistades
+      sinceras y una vida llena de momentos que te hagan sonreír.
+    </p>
+
+    <p>
+      Gracias por existir y por ser tú.
+      Nunca dejes que el mundo te convenza de que debes dejar
+      de serlo. 🎀
+    </p>
+
+    <div class="signature">
+      Con cariño, Girls 🩷
+    </div>
+
+  </div>
+</section>
+
+<!-- RECORDATORIOS -->
+
+<section>
+  <div class="section-heading">
+    <small>🎀 PEQUEÑOS RECORDATORIOS</small>
+    <h2>Guarda esto en tu corazón</h2>
+    <p>Pequeñas verdades que mereces recordar. ♡</p>
+  </div>
+
+  <div class="reminders">
+
+    <div class="reminder">
+      <span>🌷</span>
+      Tu personalidad no necesita la aprobación de todo el mundo.
+    </div>
+
+    <div class="reminder">
+      <span>🩷</span>
+      No tienes que cambiar para que alguien te quiera.
+    </div>
+
+    <div class="reminder">
+      <span>🧸</span>
+      Está bien decir que no cuando algo te incomoda.
+    </div>
+
+    <div class="reminder">
+      <span>🦋</span>
+      Tus sueños son importantes, nunca dejes de creer en ellos.
+    </div>
+
+    <div class="reminder">
+      <span>💌</span>
+      Mereces que te escuchen sin hacerte sentir culpable.
+    </div>
+
+    <div class="reminder">
+      <span>🎀</span>
+      No eres menos por tener inseguridades.
+    </div>
+
+    <div class="reminder">
+      <span>🌸</span>
+      Puedes empezar de nuevo todas las veces que lo necesites.
+    </div>
+
+    <div class="reminder">
+      <span>☁️</span>
+      Descansar también es hacer algo bueno por ti.
+    </div>
+
+  </div>
+</section>
+
+<!-- AMOR PROPIO -->
+
+<section>
+  <div class="flower-box">
+    <div style="font-size:35px;margin-bottom:15px;">🌸 🩷 🌸</div>
+
+    <h2>Aprende a quererte bonito</h2>
+
+    <p>
+      Quererte no significa sentirte increíble todos los días.
+      Significa aprender a tratarte con paciencia, respetar tus
+      emociones, reconocer tus logros y entender que también
+      mereces la comprensión que les das a los demás.
+      No necesitas ser perfecta para tratarte con amor.
+    </p>
+
+    <div style="margin-top:25px;font-size:23px;">
+      ୨୧ ♡ ୨୧
+    </div>
+  </div>
+</section>
+
+<!-- MENSAJES -->
+
+<section>
+  <div class="section-heading">
+    <small>💗 UN POQUITO DE AMOR</small>
+    <h2>Frases para ti</h2>
+    <p>Porque nunca sobran las palabras bonitas.</p>
+  </div>
+
+  <div class="messages">
+
+    <div class="message">
+      <div class="emoji">🎀</div>
+      <p>Eres más que suficiente.</p>
+    </div>
+
+    <div class="message">
+      <div class="emoji">🌷</div>
+      <p>Tu existencia es especial.</p>
+    </div>
+
+    <div class="message">
+      <div class="emoji">🩷</div>
+      <p>Mereces un amor bonito.</p>
+    </div>
+
+    <div class="message">
+      <div class="emoji">🦢</div>
+      <p>No necesitas compararte.</p>
+    </div>
+
+    <div class="message">
+      <div class="emoji">🧸</div>
+      <p>Está bien ser sensible.</p>
+    </div>
+
+    <div class="message">
+      <div class="emoji">🦋</div>
+      <p>Tus sueños sí importan.</p>
+    </div>
+
+    <div class="message">
+      <div class="emoji">💌</div>
+      <p>Tu voz merece ser escuchada.</p>
+    </div>
+
+    <div class="message">
+      <div class="emoji">🌸</div>
+      <p>También mereces recibir cariño.</p>
+    </div>
+
+    <div class="message">
+      <div class="emoji">☁️</div>
+      <p>No tienes que ser perfecta.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LUGAR SEGURO -->
+
+<section>
+  <div class="flower-box">
+    <div style="font-size:35px;margin-bottom:15px;">🏡 🎀 🩷</div>
+
+    <h2>Este es un espacio para ti</h2>
+
+    <p>
+      Aquí creemos que ninguna chica debería sentirse inferior
+      por ser diferente. Todas merecen respeto, tranquilidad,
+      comprensión y la libertad de expresarse sin miedo a ser
+      humilladas.
+    </p>
+
+    <p style="margin-top:15px;">
+      No importa tu personalidad, tus gustos, tu apariencia
+      o tu historia. Mereces ser tratada con dignidad.
+      Que nunca te falten personas que te quieran bien.
+    </p>
+
+    <div style="margin-top:25px;font-size:23px;">
+      ♡ Todas merecemos un lugar donde sentirnos bien. ♡
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+
+<div class="final">
+
+  <div class="big-heart">🩷</div>
+
+  <h2>Antes de irte...</h2>
+
+  <p>
+    Esperamos que este pequeño rincón te haya regalado
+    una sonrisa, un poquito de tranquilidad o simplemente
+    el recordatorio de que eres una persona valiosa.
+  </p>
+
+  <p>
+    Nunca olvides que mereces respeto, cariño, comprensión
+    y momentos que hagan feliz a tu corazón.
+  </p>
+
+  <div class="ending">
+    Sigue brillando, niña bonita. 🎀
+  </div>
+
+  <div style="font-size:26px;margin-top:25px;">
+    🌷 ♡ 🧸 ♡ 🌸
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  <p>୨୧ GIRLS 🩷 · UN LUGAR LLENO DE CARIÑO ୨୧</p>
+  <p>Hecho con amor para todas las niñas bonitas del mundo ♡</p>
+  <p>© 2026 Girls. Todos los derechos reservados.</p>
+</footer>
+
+</div>
+
+<script>
+// Corazones flotantes decorativos
+
+const symbols = ["♡", "♥", "୨୧", "✿", "🩷"];
+
+function createFloating() {
+  const element = document.createElement("div");
+
+  element.className = "floating";
+  element.textContent = symbols[
+    Math.floor(Math.random() * symbols.length)
+  ];
+
+  element.style.left = Math.random() * 100 + "vw";
+  element.style.fontSize = (12 + Math.random() * 15) + "px";
+  element.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+  document.body.appendChild(element);
+
+  setTimeout(() => element.remove(), 11000);
+}
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  setInterval(createFloating, 1300);
+}
+</script>
+
+</body>
+</html>
