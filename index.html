@@ -37,26 +37,47 @@ body {
   color: var(--text);
   font-family: 'Quicksand', sans-serif;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* DECORACIÓN */
+/* FONDO PERSONALIZADO */
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: .25;
+  z-index: -2;
+  background-image:
+    linear-gradient(
+      rgba(255, 250, 253, .88),
+      rgba(255, 250, 253, .88)
+    ),
+    url("https://i.ibb.co/cXNYtvWW/e3b1a08e-df79-447b-ba5a-6f6521dd0a1a.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .22;
   background-image: radial-gradient(#efb5ce 0.8px, transparent 0.8px);
   background-size: 23px 23px;
   z-index: -1;
 }
+
+/* DECORACIÓN */
 
 .decor {
   position: absolute;
   pointer-events: none;
   color: #efb2cc;
   opacity: .7;
+  animation: decorFloat 5s ease-in-out infinite;
 }
 
 .decor.one {
@@ -69,18 +90,30 @@ body::before {
   top: 220px;
   right: 7%;
   font-size: 27px;
+  animation-delay: 1s;
 }
 
 .decor.three {
   top: 700px;
   left: 7%;
   font-size: 25px;
+  animation-delay: 2s;
 }
 
 .decor.four {
   top: 1150px;
   right: 6%;
   font-size: 30px;
+  animation-delay: 1.5s;
+}
+
+@keyframes decorFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
 }
 
 /* CONTENEDOR */
@@ -95,6 +128,7 @@ body::before {
 header {
   padding: 25px 0;
   text-align: center;
+  animation: fadeDown 1s ease both;
 }
 
 .logo {
@@ -124,11 +158,12 @@ header {
   text-align: center;
   padding: 65px 15px 75px;
   position: relative;
+  animation: fadeUp 1s .15s ease both;
 }
 
 .hero-label {
   display: inline-block;
-  background: #fff0f6;
+  background: #fff0f6e8;
   border: 1px solid #f8d8e5;
   padding: 9px 19px;
   border-radius: 30px;
@@ -163,18 +198,26 @@ header {
   margin-top: 30px;
   font-size: 30px;
   letter-spacing: 9px;
+  animation: heartbeat 2.5s ease-in-out infinite;
 }
 
-/* IMAGEN */
+/* IMÁGENES */
 
 .image-frame {
   max-width: 680px;
   margin: 0 auto 75px;
   padding: 12px;
   border: 1px solid #f3d4e1;
-  background: white;
+  background: rgba(255,255,255,.88);
   border-radius: 25px;
   box-shadow: 0 15px 45px #e8bad02b;
+  overflow: hidden;
+  transition: transform .4s, box-shadow .4s;
+}
+
+.image-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px #e8bad050;
 }
 
 .image-frame img {
@@ -183,6 +226,15 @@ header {
   height: 310px;
   object-fit: cover;
   border-radius: 17px;
+}
+
+.image-caption {
+  text-align: center;
+  color: #d58aaa;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  padding: 13px 5px 3px;
 }
 
 /* SECCIONES */
@@ -226,7 +278,7 @@ section {
 }
 
 .card {
-  background: #fff;
+  background: rgba(255,255,255,.91);
   border: 1px solid #f5dce7;
   border-radius: 20px;
   padding: 27px;
@@ -261,11 +313,12 @@ section {
 
 .quote {
   text-align: center;
-  background: linear-gradient(135deg, #fff0f6, #fff8fb);
+  background: linear-gradient(135deg, #fff0f6ed, #fff8fbf2);
   border: 1px solid #f5d5e3;
   border-radius: 25px;
   padding: 50px 25px;
   margin: 80px 0;
+  box-shadow: 0 10px 35px #e7b9cf12;
 }
 
 .quote .symbol {
@@ -293,7 +346,7 @@ section {
 /* CARTA */
 
 .letter {
-  background: #fff;
+  background: rgba(255,255,255,.93);
   border: 1px solid #f2d5e2;
   border-radius: 23px;
   padding: clamp(25px, 6vw, 50px);
@@ -341,7 +394,7 @@ section {
 }
 
 .reminder {
-  background: #fff;
+  background: rgba(255,255,255,.92);
   border: 1px solid #f4dce6;
   border-radius: 15px;
   padding: 19px 22px;
@@ -351,6 +404,12 @@ section {
   font-size: 14px;
   line-height: 1.7;
   color: #99788b;
+  transition: transform .3s, background .3s;
+}
+
+.reminder:hover {
+  transform: translateX(5px);
+  background: #fff5f9;
 }
 
 .reminder span {
@@ -360,7 +419,7 @@ section {
 /* FLORES */
 
 .flower-box {
-  background: linear-gradient(135deg, #fff2f7, #fff9fc);
+  background: linear-gradient(135deg, #fff2f7ed, #fff9fcf2);
   border-radius: 25px;
   padding: 40px 25px;
   text-align: center;
@@ -392,10 +451,16 @@ section {
 
 .message {
   text-align: center;
-  background: white;
+  background: rgba(255,255,255,.92);
   border: 1px solid #f3dce6;
   padding: 23px 15px;
   border-radius: 18px;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.message:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px #e7b9cf30;
 }
 
 .message .emoji {
@@ -421,6 +486,7 @@ section {
 .final .big-heart {
   font-size: 40px;
   margin-bottom: 20px;
+  animation: heartbeat 2s infinite;
 }
 
 .final h2 {
@@ -454,10 +520,57 @@ footer {
   color: #c28ba5;
   font-size: 11px;
   letter-spacing: 1px;
+  background: rgba(255,255,255,.55);
 }
 
 footer p + p {
   margin-top: 8px;
+}
+
+/* ANIMACIONES */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* APARICIÓN AL DESPLAZARSE */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* CORAZONES FLOTANTES */
@@ -503,6 +616,11 @@ footer p + p {
     font-size: 13px;
   }
 
+  .image-frame {
+    margin-bottom: 55px;
+    padding: 9px;
+  }
+
   .image-frame img {
     height: 220px;
   }
@@ -532,13 +650,24 @@ footer p + p {
     font-size: 12px;
     padding: 16px;
   }
+
+  .decor {
+    opacity: .4;
+  }
 }
+
+/* MENOS MOVIMIENTO SI EL DISPOSITIVO LO PREFIERE */
 
 @media(prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     scroll-behavior: auto !important;
     animation: none !important;
     transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 </style>
@@ -582,16 +711,22 @@ footer p + p {
   </div>
 </div>
 
-<div class="image-frame">
+<!-- KITTY CON FLOR -->
+
+<div class="image-frame reveal">
   <img
-    src="https://placehold.co/900x420/fff0f6/d77fa4?text=Girls+%E2%99%A1"
-    alt="Decoración rosa de Girls"
+    src="https://i.ibb.co/gqPSv8v/9ca77fe9-6bd1-48aa-835b-efcb1735a6d5.jpg"
+    alt="Hello Kitty con una flor"
+    loading="lazy"
   >
+  <div class="image-caption">
+    Un pequeño detalle para una niña especial 🌷
+  </div>
 </div>
 
 <!-- ERES ESPECIAL -->
 
-<section>
+<section class="reveal">
   <div class="section-heading">
     <small>♡ PARA RECORDAR ♡</small>
     <h2>Eres alguien especial</h2>
@@ -649,7 +784,7 @@ footer p + p {
 
 <!-- FRASE -->
 
-<div class="quote">
+<div class="quote reveal">
   <div class="symbol">“</div>
   <h2>
     No eres una copia de nadie.
@@ -658,9 +793,22 @@ footer p + p {
   <p>♡ CON MUCHO CARIÑO, GIRLS 🩷 ♡</p>
 </div>
 
+<!-- KITTY CON LENTES -->
+
+<div class="image-frame reveal">
+  <img
+    src="https://i.ibb.co/jv2LshfK/e10d9866-9273-4e9c-ab4f-285e611d8f86.jpg"
+    alt="Hello Kitty con lentes haciendo una pose"
+    loading="lazy"
+  >
+  <div class="image-caption">
+    Sé siempre tú misma, ¡brilla a tu manera! 🩷
+  </div>
+</div>
+
 <!-- DÍAS DIFÍCILES -->
 
-<section>
+<section class="reveal">
   <div class="section-heading">
     <small>🌧️ PARA LOS DÍAS DIFÍCILES</small>
     <h2>Si hoy no fue tu día...</h2>
@@ -718,7 +866,7 @@ footer p + p {
 
 <!-- CARTA -->
 
-<section>
+<section class="reveal">
   <div class="section-heading">
     <small>💌 UNA CARTITA PARA TI</small>
     <h2>Querida niña bonita...</h2>
@@ -788,7 +936,7 @@ footer p + p {
 
 <!-- RECORDATORIOS -->
 
-<section>
+<section class="reveal">
   <div class="section-heading">
     <small>🎀 PEQUEÑOS RECORDATORIOS</small>
     <h2>Guarda esto en tu corazón</h2>
@@ -842,7 +990,7 @@ footer p + p {
 
 <!-- AMOR PROPIO -->
 
-<section>
+<section class="reveal">
   <div class="flower-box">
     <div style="font-size:35px;margin-bottom:15px;">🌸 🩷 🌸</div>
 
@@ -862,9 +1010,22 @@ footer p + p {
   </div>
 </section>
 
+<!-- KITTY JUGANDO VÓLEY -->
+
+<div class="image-frame reveal">
+  <img
+    src="https://i.ibb.co/hJnD4FYH/99db0f59-ec18-4434-89c4-3d056795edaa.jpg"
+    alt="Hello Kitty jugando al voleibol"
+    loading="lazy"
+  >
+  <div class="image-caption">
+    Sigue tus sueños y disfruta cada momento 🏐🌸
+  </div>
+</div>
+
 <!-- MENSAJES -->
 
-<section>
+<section class="reveal">
   <div class="section-heading">
     <small>💗 UN POQUITO DE AMOR</small>
     <h2>Frases para ti</h2>
@@ -923,7 +1084,7 @@ footer p + p {
 
 <!-- LUGAR SEGURO -->
 
-<section>
+<section class="reveal">
   <div class="flower-box">
     <div style="font-size:35px;margin-bottom:15px;">🏡 🎀 🩷</div>
 
@@ -950,7 +1111,7 @@ footer p + p {
 
 <!-- FINAL -->
 
-<div class="final">
+<div class="final reveal">
 
   <div class="big-heart">🩷</div>
 
@@ -988,7 +1149,7 @@ footer p + p {
 </div>
 
 <script>
-// Corazones flotantes decorativos
+// CORAZONES FLOTANTES
 
 const symbols = ["♡", "♥", "୨୧", "✿", "🩷"];
 
@@ -1009,8 +1170,31 @@ function createFloating() {
   setTimeout(() => element.remove(), 11000);
 }
 
+// ANIMACIÓN AL DESPLAZARSE
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  revealElements.forEach(element => observer.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add("visible"));
+}
+
+// ACTIVAR CORAZONES
+
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  setInterval(createFloating, 1300);
+  setInterval(createFloating, 1600);
 }
 </script>
 
